@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCartTotalQuantity, toggleCart } from './cartSlice'
-import { ShoppingBag } from 'lucide-react'
 
 export function CartButton() {
     const dispatch = useDispatch()
@@ -9,9 +8,9 @@ export function CartButton() {
     return (
         <button 
             onClick={() => dispatch(toggleCart())}
-            style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '8px' }}
+            style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '8px', fontSize: '20px' }}
         >
-            <ShoppingBag size={24} />
+            🛒
             {totalQuantity > 0 && (
                 <span style={{
                     position: 'absolute',

@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCartItems, selectCartTotalPrice, toggleCart } from './cartSlice'
 import { CartItem } from './CartItem'
-import { X } from 'lucide-react'
 
 export function CartDrawer() {
     const dispatch = useDispatch()
@@ -21,8 +20,8 @@ export function CartDrawer() {
         <div style={{ position: 'fixed', top: 0, right: 0, height: '100vh', width: '350px', background: '#fff', boxShadow: '-2px 0 5px rgba(0,0,0,0.1)', padding: '20px', display: 'flex', flexDirection: 'column', zIndex: 1000 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2>Корзина</h2>
-                <button onClick={() => dispatch(toggleCart())} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-                    <X size={24} />
+                <button onClick={() => dispatch(toggleCart())} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}>
+                    ✕
                 </button>
             </div>
 

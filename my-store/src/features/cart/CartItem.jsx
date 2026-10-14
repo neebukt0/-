@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux'
 import { updateQuantity, removeFromCart } from './cartSlice'
-import { Minus, Plus, Trash2 } from 'lucide-react'
 
 export function CartItem({ item }) {
     const dispatch = useDispatch()
@@ -31,15 +30,15 @@ export function CartItem({ item }) {
                     onClick={handleDecrease} 
                     disabled={item.quantity <= 1}
                 >
-                    <Minus size={16} />
+                    -
                 </button>
                 <span>{item.quantity}</span>
                 <button onClick={handleIncrease}>
-                    <Plus size={16} />
+                    +
                 </button>
             </div>
             <button onClick={handleRemove} className="cart-item-remove">
-                <Trash2 size={18} />
+                🗑
             </button>
         </div>
     )

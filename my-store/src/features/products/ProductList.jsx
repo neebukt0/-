@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "./productSlice";
+import { addToCart } from "../cart/cartSlice";
 
 export function ProductList() {
     const dispatch = useDispatch()
@@ -31,11 +32,17 @@ export function ProductList() {
                             display: 'flex', flexDirection: 'column', justifyContent: 'space-between'
                         }}  
                     >
-                        <img src={product.image} alt="" />
+                        <img src={product.image} alt="" style={{width: '100%', height: '150px', objectFit: 'contain'}} />
                         <h4>{product.title}</h4>
                         <p>{product.description}</p>
-                        <p>{product.cost}</p>
-                        <button type="button">Добавить в корзину</button>
+                        <p><b>${product.price ?? product.cost}</b></p>
+                        <button 
+                            type="button" 
+                            onClick={() => dispatch(addToCart(product))}
+                            style={{padding: '8px', background: '#000', color: '##fff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}
+                        >
+                            Добавить в корзину
+                        </button>
                     </div>
                 ))}
             </div>

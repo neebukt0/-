@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@vscode/sqlite3": "^5.1.14-vscode",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "allowScripts": {
+    "sqlite3@6.0.1": true,
+    "bcrypt@6.0.0": true
+  }
+}
